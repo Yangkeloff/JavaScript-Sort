@@ -1,5 +1,3 @@
-const swap = require('./utils').swap
-
 const insertionSort = (arr) => {
   for(let i = 1; i < arr.length; i++){  // 从数组第二个元素开始
     let j = i
