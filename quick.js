@@ -4,7 +4,7 @@ const partition = (arr = [], left, right) => {
   let pivot = arr[Math.floor((left + right) / 2)],
       il = left,
       ir = right
-  console.log(`partition--- pivot:${pivot},il:${il},ir:${ir}`)
+  console.log(`pivot:${pivot}`)
   while(il <= ir) {
     while(arr[il] < pivot) {
       il++
@@ -22,7 +22,7 @@ const partition = (arr = [], left, right) => {
 }
 
 const quick = (arr = [], left, right) => {
-  console.log(`数组:${arr},左:${left},右:${right}`)
+  console.log(`数组:${arr},  左:${left},右:${right}`)
   let index
   if(arr.length > 1) {
     index = partition(arr, left, right)
