@@ -3,12 +3,13 @@ const merge = (leftArr = [], rightArr = []) => {
   while(l < leftArr.length && r < rightArr.length) {
     res.push(leftArr[l] < rightArr[r] ? leftArr[l++] : rightArr[r++]) // 对比左右将较小者加入结果，并递增控制变量
   }
-  return res.concat(l < leftArr.length ? leftArr.slice(l, leftArr.length) : rightArr.slice(r, rightArr.length))
+  res = res.concat(l < leftArr.length ? leftArr.slice(l, leftArr.length) : rightArr.slice(r, rightArr.length))
+  console.log(`leftArr:${leftArr} rightArr:${rightArr} res:${res}`)
+  return res
 }
 
 const mergeSort = (arr = []) => {
   if(arr.length > 1) {
-    console.log(arr)
     const { length } = arr
     const mid = Math.floor(length / 2)
     const left = mergeSort(arr.slice(0, mid))
@@ -18,4 +19,4 @@ const mergeSort = (arr = []) => {
   return arr
 }
 
-console.log(mergeSort([5, 4, 3, 2, 1]))
+console.log(mergeSort([8, 7, 6, 5, 4, 3, 2, 1]))
