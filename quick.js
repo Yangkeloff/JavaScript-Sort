@@ -18,6 +18,7 @@ const partition = (arr = [], left, right) => {
       ir--
     }
   }
+  console.log(`il:${il} ir:${ir}`)
   return il
 }
 
@@ -26,7 +27,6 @@ const quick = (arr = [], left, right) => {
   let index
   if(arr.length > 1) {
     index = partition(arr, left, right)
-    console.log(`index:${index}`)
     if(left < index - 1) {
       quick(arr, left, index - 1)
     }
