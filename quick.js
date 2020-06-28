@@ -4,7 +4,7 @@ const partition = (arr = [], left, right) => {
   let pivot = arr[Math.floor((left + right) / 2)],
       il = left,
       ir = right
-  console.log(`pivot:${pivot}`)
+  // console.log(`pivot:${pivot}`)
   while(il <= ir) {
     while(arr[il] < pivot) {
       il++
@@ -18,12 +18,12 @@ const partition = (arr = [], left, right) => {
       ir--
     }
   }
-  console.log(`il:${il} ir:${ir}`)
+  // console.log(`il:${il} ir:${ir}`)
   return il
 }
 
 const quick = (arr = [], left, right) => {
-  console.log(`数组:${arr},  左:${left},右:${right}`)
+  // console.log(`数组:${arr},  左:${left},右:${right}`)
   let index
   if(arr.length > 1) {
     index = partition(arr, left, right)
@@ -41,4 +41,8 @@ const quickSort = (arr = []) => {
   return quick(arr, 0, arr.length - 1)
 }
 
-console.log(quickSort([3, 5, 1, 6, 4, 7, 2]))
+// console.log(quickSort([3, 5, 1, 6, 4, 7, 2]))
+
+module.exports = {
+  quickSort
+}
