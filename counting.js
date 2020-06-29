@@ -11,10 +11,10 @@ const findMaxValue = (arr = []) => {
 const countingSort = (arr = []) => {
   if(arr.length < 2) return arr
   const maxValue = findMaxValue(arr)
-  const countsArr = new Array(maxValue + 1)
+  const countsArr = new Array(maxValue + 1)   // 创建计数数组，index最大值为待排序数组最大value
 
   arr.forEach((ele) => {  // 为计数数组填值(即出现次数)
-    if(!countsArr[ele]) {
+    if(!countsArr[ele]) {   // 如果没有此项则初始化为0
       countsArr[ele] = 0
     }
     countsArr[ele]++
@@ -24,7 +24,7 @@ const countingSort = (arr = []) => {
   countsArr.forEach((count, i) => {
     console.log(`i:${i} count:${count}`)
     while(count > 0) {
-      arr[sortedIndex] = i  //  计数大于0则表示数组有此元素，在对应位置sortedIndex插入此元素，值为i
+      arr[sortedIndex] = i  //  计数大于0则表示数组有此元素，在对应位置sortedIndex插入此元素，value为当前计数元素的index
       sortedIndex++
       count-- // 多个元素相同时，多次添加，直到计数为0
     }
