@@ -3,9 +3,8 @@ const merge = (leftArr = [], rightArr = []) => {
   while(l < leftArr.length && r < rightArr.length) {
     res.push(leftArr[l] < rightArr[r] ? leftArr[l++] : rightArr[r++]) // 对比左右将较小者加入结果，并递增控制变量
   }
-  res = res.concat(l < leftArr.length ? leftArr.slice(l, leftArr.length) : rightArr.slice(r, rightArr.length))
-  console.log(`leftArr:${leftArr} rightArr:${rightArr} res:${res}`)
-  return res
+  return res.concat(l < leftArr.length ? leftArr.slice(l, leftArr.length) : rightArr.slice(r, rightArr.length))
+  // 此时l或r数组只有一个还有剩余元素且较大,将其并入结果
 }
 
 const mergeSort = (arr = []) => {
