@@ -12,7 +12,6 @@ const selectionSort = (arr) => {
     if(minIndex !== i) {
       swap(arr, i, minIndex)  // 若最小值非当前位置i则交换
     }
-    console.log(`第${i + 1}次外循环结束:${arr}`)
   }
 }
 
